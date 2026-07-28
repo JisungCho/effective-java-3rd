@@ -31,13 +31,15 @@
   - 일반적 JDK 예시보다 이 프로젝트에 작성한 코드를 우선 예시로 사용.
 - 각 아이템 진행 순서: 개념 요약 → 예제 코드 → Learn by Doing → 테스트 → md 정리 → 다음 아이템.
 - 모든 예제 클래스는 `final` (상속 금지, Item 19와 정합).
+- **Learn by Doing 과제 설계 원칙**: TODO(human)은 단순 알고리즘/로직 구현이 아니라 **해당 아이템의 핵심 개념을 직접 코드로 체득하는 과제**여야 한다. (예: Item 4의 "private 생성자 + AssertionError 작성", Item 3의 "싱글턴 상태 누적 관찰")
 
 ## 진행 상황
 - [x] Item 1: 생성자 대신 정적 팩터리 메서드를 고려하라 (ch02/item01) — 완료
 - [x] Item 2: 생성자에 매개변수가 많을 때는 빌더를 고려하라 (ch02/item02) — 완료
 - [x] Item 3: private 생성자나 열거 타입으로 싱글턴임을 보증하라 (ch02/item03) — 완료
-- [ ] Item 4: 인스턴스화를 막으려거든 private 생성자를 사용하라 — 다음
-- [ ] Item 5 ~ 90: 미진행
+- [x] Item 4: 인스턴스화를 막으려거든 private 생성자를 사용하라 (ch02/item04) — 완료
+- [ ] Item 5: 자원을 직접 명시하지 말고 의존 객체 주입을 사용하라 — 다음
+- [ ] Item 6 ~ 90: 미진행
 
 ## 빌드 관련 참고 (Windows)
 - `build.gradle`에 UTF-8 인코딩과 `junit-platform-launcher` 의존성이 설정되어 있어야 함 (Gradle 9 + 한글 조합)
