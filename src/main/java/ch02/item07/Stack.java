@@ -10,7 +10,7 @@ import java.util.EmptyStackException;
  * {@code null} 로 덮어쓴다. 그래야 GC 가 "이 객체는 더 쓸모없다"고 판단해
  * 회수할 수 있다.
  *
- * <p>이 클래스의 핵심 {@code pop()} 구현은 학습자가 직접 완성한다.
+ * <p>핵심 {@code pop()} 구현은 학습자가 직접 완성했다.
  */
 public final class Stack {
 
@@ -44,18 +44,13 @@ public final class Stack {
      * @throws EmptyStackException 스택이 비어 있을 때
      */
     public Object pop() {
-        // TODO(human): 다 쓴 참조를 해제하는 pop() 을 구현하라.
-        // 단, 비어 있을 때는 EmptyStackException 을 던진다.
-        // 힌트: LeakyStack.pop() 은 참조를 남겨둔다. 이곳에서는 참조를 끊어야 한다.
-        if(size == 0){
+        if (size == 0) {
             throw new EmptyStackException();
-        }else{
-            Object pop = elements[size];
-            elements[size] = null;
-            size--;
-            return pop;
-
         }
+        size--;
+        Object result = elements[size];
+        elements[size] = null;   // 다 쓴 참조 해제 — GC 가 회수할 수 있게
+        return result;
     }
 
     /**
